@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="new_edit_showContent">
+        <h2>スケジュールの登録</h2>
+
+        <div class="form">
+            <%= form_with(model: @schedule, local: true) do |f| %>
+                <div class="formItem w100">
+                    <%= f.label :name, "タイトル", class: 'formLabel formRequired' %>
+                    <%= f.text_field :name, placeholder: "タイトルを入力", class: 'itemContent' %>
+                    
+                    <% if @schedule.errors.include?(:name) %>
+                        <p class="formError"><%= @schedule.errors.full_messages_for(:name).first %>
+                    <% end %>
+                </div>
+                <div class="formItem w45 horizotal">
+                    <%= f.label :start_date, "開始日", class: 'formLabel formRequired' %>
+                    <%= f.date_field :start_date, placeholder: "日付を選択", class: 'itemContent' %>
+
+                    <% if @schedule.errors.include?(:start_date) %>
+                        <p class="formError"><%= @schedule.errors.full_messages_for(:start_date).first %>
+                    <% end %>
+                </div>
+                <div class="formItem w45 horizotal">
+                    <%= f.label :end_date, "終了日", class: 'formLabel formRequired' %>
+                    <%= f.date_field :end_date, placeholder: "日付を選択", class: 'itemContent' %>
+
+                    <% if @schedule.errors.include?(:end_date) %>
+                        <p class="formError"><%= @schedule.errors.full_messages_for(:end_date).first %>
+                    <% end %>
+                </div>
+                <div class="formItem w100 mt0">
+                    <%= f.check_box :is_all_day ,{}, checked_value='true', unchecked_value='false' %>
+                    終日の場合はチェックを入れます
+                </div>
+                <div class="formItem w100">
+                    <%= f.label :memo, "メモ", class: 'formLabel' %>
+                    <%= f.text_area :memo, placeholder: "メモを入力", class: 'itemContent' %>
+                </div>
+
+                <div class="formButtonArea">
+                    <%= link_to "キャンセル", schedules_path %>
+                    <%= f.submit "保存", class: 'button primaryButton validCheck'%>
+                </div>
+            <% end %> 
+
+        </div>
+    </div>
+</div>

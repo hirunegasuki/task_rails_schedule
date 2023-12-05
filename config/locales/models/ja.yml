@@ -1,0 +1,13 @@
+ja:
+ activerecord:
+  models:
+   schedule: スケジュール
+  attributes:
+   schedule:
+    name: タイトル
+    start_date: 開始日
+    end_date: 終了日 
+  formats:
+   default: "%Y/%m/%d"
+   short: "%m/%d"
+   time: "%Y/%m/%d %H:%M" 

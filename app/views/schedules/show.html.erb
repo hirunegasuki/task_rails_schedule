@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="new_edit_showContent">
+        <%= link_to "/schedules", class: 'historyButton' do %>
+            <i class="actionIcon historyIcon"></i>TOPに戻る
+        <% end %> 
+        <div class="toolbar">
+            <h2><%= @schedule.name %></h2>
+            <div class="button secondaryButton">
+                <%= link_to "編集", edit_schedule_path %>
+            </div>
+        </div>
+
+        <div class="form">
+            <table>
+            <tbody>
+                <tr>
+                    <th>開始日</th>
+                    <td><%= @schedule.start_date %></td>
+                </tr>
+                <tr>
+                    <th>終了日</th>
+                    <td><%= @schedule.end_date %></td>
+                </tr>
+                <tr>
+                    <th>終日</th>
+                    <td>
+                        <% if @schedule.is_all_day == true %>○
+                        <% else @schedule.is_all_day == false %>
+                        <% end %>
+                    </td>
+                </tr>
+                <tr>
+                    <th>スケジュールメモ</th>
+                    <td><%= @schedule.memo %></td>
+                </tr>
+            </tbody>
+
+            </table>
+        </div>
+
+    </div>
+</div>

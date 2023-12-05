@@ -1,0 +1,51 @@
+<div class="container">
+<p class="today">今日の日付：<%= l Time.zone.today %></p>
+    <div class="toolbar">
+        <div class="title">
+            <h1>スケジュール</h1>
+            <p class="scheduleCount">件数&nbsp;<span class="number"><%= @schedule_count %></span>件</p>
+        </div>
+        <%= link_to "/schedules/new", class: 'button primaryButton' do %>
+            <i class="actionIcon plusIcon"></i>新規登録
+        <% end %>    
+    </div>
+    <div class="schedule">
+        <table>
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>タイトル</th>
+                <th>開始日</th>
+                <th>終了日</th>
+                <th>終日</th>
+                <th>最終更新日</th>
+                <th>操作</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @schedules.each do |schedule| %>
+            <tr>
+                <td><%= schedule.id %></td>
+                <td><%= schedule.name %></td>
+                <td><%= l schedule.start_date %></td>
+                <td><%= l schedule.end_date %></td>
+                <td>
+                    <% if schedule.is_all_day == true %>○
+                    <% else schedule.is_all_day == false %>
+                    <% end %>
+                </td>
+                <td><%= schedule.updated_at.to_s(:datetime_jp) %></td>
+                
+                <td class="action"><%= link_to "詳細", schedule %></td>
+                <td class="action"><%= link_to "編集", [:edit, schedule] %></td>
+                <td class="action"><%= link_to "削除", schedule, method: :delete, data: { confirm: "本当に削除しますか？" } %></td>
+            </tr>
+            <% end %>
+        </tbody>
+        </table>
+    </div>
+</div>
+
+
