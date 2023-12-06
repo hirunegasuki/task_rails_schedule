@@ -10,4 +10,4 @@ ja:
   formats:
    default: "%Y/%m/%d"
    short: "%m/%d"
-   time: "%Y/%m/%d %H:%M" 
+   time: "%Y/%m/%d %H:%M"

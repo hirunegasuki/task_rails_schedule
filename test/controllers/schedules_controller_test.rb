@@ -5,3 +5,4 @@ class SchedulesControllerTest < ActionDispatch::IntegrationTest
   #   assert true
   # end
 end
+

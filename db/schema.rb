@@ -12,14 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2023_12_01_033759) do
 
-  create_table "contents", charset: "utf8mb4", force: :cascade do |t|
-    t.string "title"
-    t.date "start_time"
-    t.date "end_time"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "schedules", charset: "utf8mb4", force: :cascade do |t|
     t.string "name"
     t.date "start_date"

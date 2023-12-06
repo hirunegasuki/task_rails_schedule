@@ -7,6 +7,7 @@ class Schedule < ApplicationRecord
 
     def date_check
         return false if end_date.blank? || start_date.blank?
+        
         errors.add(:end_date, "は開始日以降の日付を指定ください") unless
         self.start_date <= self.end_date
     end

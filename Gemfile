@@ -55,8 +55,10 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+# ▼ここからrails課題1で追加した記述
 # 日本語対応用
 gem 'rails-i18n'
 
 # デバッグ用
 gem 'pry-rails'
+# ここまで

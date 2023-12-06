@@ -47,6 +47,7 @@ class SchedulesController < ApplicationController
     end
  
     private
+    
     def schedule_params
         params.require(:schedule).permit(
             :name, 

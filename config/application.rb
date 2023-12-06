@@ -11,12 +11,14 @@ module TaskSchedule
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
 
+    # ▼ここからrails課題1で追加した記述
     # 更新日取得
     config.time_zone = 'Asia/Tokyo'
 
     # 日本語の言語設定
     config.i18n.default_locale = :ja
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', 'models', 'ja.{rb,yml}').to_s]
+    # ▲ここまで
 
     # Configuration for the application, engines, and railties goes here.
     #
